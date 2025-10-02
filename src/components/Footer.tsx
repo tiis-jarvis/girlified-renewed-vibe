@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12 md:py-16">
+    <footer className="bg-foreground text-background py-12 md:py-16 animate-fade-in">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -24,22 +24,22 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg mb-4 text-primary">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="text-background/80 hover:text-primary transition-colors">
+                <Link to="/about" className="text-background/80 hover:text-primary transition-all duration-300 hover:translate-x-1">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/our-story" className="text-background/80 hover:text-primary transition-colors">
+                <Link to="/our-story" className="text-background/80 hover:text-primary transition-all duration-300 hover:translate-x-1">
                   Our Story
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-background/80 hover:text-primary transition-colors">
+                <Link to="/products" className="text-background/80 hover:text-primary transition-all duration-300 hover:translate-x-1">
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-background/80 hover:text-primary transition-colors">
+                <Link to="/blog" className="text-background/80 hover:text-primary transition-all duration-300 hover:translate-x-1">
                   Blog
                 </Link>
               </li>
@@ -73,7 +73,7 @@ export const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/20 hover:bg-primary flex items-center justify-center transition-all"
+                className="w-10 h-10 rounded-full bg-primary/20 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -81,7 +81,7 @@ export const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/20 hover:bg-primary flex items-center justify-center transition-all"
+                className="w-10 h-10 rounded-full bg-primary/20 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -89,7 +89,7 @@ export const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/20 hover:bg-primary flex items-center justify-center transition-all"
+                className="w-10 h-10 rounded-full bg-primary/20 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1"
               >
                 <Twitter className="w-5 h-5" />
               </a>

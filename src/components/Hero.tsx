@@ -21,7 +21,7 @@ export const Hero = () => {
             </p>
             <Button
               size="lg"
-              className="bg-gradient-primary hover:shadow-glow transition-all text-lg px-8"
+              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-105 text-lg px-8"
             >
               Shop Now
             </Button>

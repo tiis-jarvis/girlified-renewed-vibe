@@ -22,14 +22,14 @@ export const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-muted/30 p-8 rounded-lg hover:shadow-glow transition-all hover:-translate-y-1 animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-muted/30 p-8 rounded-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-2 animate-scale-in group"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="flex flex-col items-center text-center space-y-4">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-24 h-24 rounded-lg object-cover shadow-md"
+                  className="w-24 h-24 rounded-lg object-cover shadow-md transition-transform duration-300 group-hover:scale-110"
                 />
                 <blockquote className="text-primary text-lg font-medium italic">
                   "{testimonial.quote}"

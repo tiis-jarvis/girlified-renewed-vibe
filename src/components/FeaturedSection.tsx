@@ -22,11 +22,11 @@ export const FeaturedSection = () => {
                 <img
                   src={featuredVideo}
                   alt="DW Feature Video"
-                  className="w-full h-auto object-cover transition-transform group-hover:scale-105"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-                  <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
-                    <Play className="w-10 h-10 text-white ml-1" fill="white" />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-all duration-300">
+                  <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300 group-hover:shadow-glow">
+                    <Play className="w-10 h-10 text-white ml-1 transition-transform duration-300 group-hover:scale-110" fill="white" />
                   </div>
                 </div>
               </div>

@@ -44,12 +44,12 @@ export const WhyChoose = () => {
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="border-primary/20 hover:shadow-glow transition-all hover:-translate-y-1 animate-scale-in"
+              className="border-primary/20 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 animate-scale-in group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-6 text-center space-y-4">
-                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-primary flex items-center justify-center">
-                  <feature.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                  <feature.icon className="w-8 h-8 text-white transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
@@ -65,7 +65,7 @@ export const WhyChoose = () => {
           <Button
             variant="outline"
             size="lg"
-            className="border-primary text-primary hover:bg-primary hover:text-white transition-all"
+            className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-glow"
           >
             Read More About Us
           </Button>
