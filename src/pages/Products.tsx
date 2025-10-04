@@ -3,11 +3,42 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Heart, Shield, Leaf, Brain, Bell, Database, Lock } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Check, Heart, Shield, Leaf, Brain, Bell, Database, Lock, Upload } from "lucide-react";
 import smartPadHero from "@/assets/smart-pad-hero.jpg";
 import smartFeatures from "@/assets/smart-features.jpg";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Products = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    image: null as File | null
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.image) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all fields and select an image.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    toast({
+      title: "Report Submitted!",
+      description: "We'll process your medical report and send it to your email.",
+    });
+
+    setFormData({ name: "", email: "", image: null });
+  };
+
   const features = [
     {
       icon: Brain,
@@ -108,6 +139,81 @@ const Products = () => {
                 Learn More
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Medical Report Form Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12 animate-fade-in">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Generate <span className="text-primary">Medical Report</span>
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Upload your test results and get a comprehensive medical report
+              </p>
+            </div>
+
+            <Card className="border-2 shadow-xl animate-fade-in">
+              <CardHeader>
+                <CardTitle className="text-2xl">Girlified Medical Report Generator</CardTitle>
+                <CardDescription>Fill in your details to generate your personalized report</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-base">Name:</Label>
+                    <Input 
+                      id="name"
+                      type="text"
+                      placeholder="Enter your full name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="border-2"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-base">Email:</Label>
+                    <Input 
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email address"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="border-2"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="image" className="text-base">Select an image:</Label>
+                    <div className="flex items-center gap-4">
+                      <Input 
+                        id="image"
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => setFormData({ ...formData, image: e.target.files?.[0] || null })}
+                        className="border-2"
+                      />
+                      <Upload className="w-5 h-5 text-muted-foreground" />
+                    </div>
+                    {formData.image && (
+                      <p className="text-sm text-muted-foreground">Selected: {formData.image.name}</p>
+                    )}
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-gradient-primary hover:shadow-glow text-lg"
+                  >
+                    Submit Report
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
