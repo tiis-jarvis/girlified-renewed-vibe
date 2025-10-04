@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,9 +35,26 @@ export const Navigation = () => {
             <Link to="/products" className="text-foreground hover:text-primary transition-all duration-300 hover:-translate-y-0.5">
               Girlified Smart Pad
             </Link>
-            <Link to="/blog" className="text-foreground hover:text-primary transition-all duration-300 hover:-translate-y-0.5">
-              Blog
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-all duration-300 hover:-translate-y-0.5 focus:outline-none">
+                Blog
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-card border-border shadow-lg">
+                <DropdownMenuItem asChild>
+                  <Link to="/blog" className="cursor-pointer">All Posts</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/blog/health" className="cursor-pointer">Health & Wellness</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/blog/sustainability" className="cursor-pointer">Sustainability</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/blog/stories" className="cursor-pointer">Success Stories</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Link to="/contact" className="text-foreground hover:text-primary transition-all duration-300 hover:-translate-y-0.5">
               Contact
             </Link>
@@ -74,13 +97,37 @@ export const Navigation = () => {
             >
               Girlified Smart Pad
             </Link>
-            <Link
-              to="/blog"
-              className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Blog
-            </Link>
+            <div className="space-y-2">
+              <p className="text-foreground font-medium px-2">Blog</p>
+              <Link
+                to="/blog"
+                className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 pl-4"
+                onClick={() => setIsOpen(false)}
+              >
+                All Posts
+              </Link>
+              <Link
+                to="/blog/health"
+                className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 pl-4"
+                onClick={() => setIsOpen(false)}
+              >
+                Health & Wellness
+              </Link>
+              <Link
+                to="/blog/sustainability"
+                className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 pl-4"
+                onClick={() => setIsOpen(false)}
+              >
+                Sustainability
+              </Link>
+              <Link
+                to="/blog/stories"
+                className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 pl-4"
+                onClick={() => setIsOpen(false)}
+              >
+                Success Stories
+              </Link>
+            </div>
             <Link
               to="/contact"
               className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
