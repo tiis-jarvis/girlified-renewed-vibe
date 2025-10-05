@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, MessageSquare, Heart, Target } from "lucide-react";
+import blogEngagementHero from "@/assets/blog-engagement-hero.jpg";
 
 const BlogEngagement = () => {
   const interviewers = [
@@ -69,7 +70,14 @@ const BlogEngagement = () => {
       
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-primary/5">
-        <div className="container mx-auto px-4">
+        <div className="absolute inset-0 overflow-hidden">
+          <img 
+            src={blogEngagementHero} 
+            alt="Community focus group discussion with women and girls" 
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <div className="inline-block mb-4">
               <span className="text-sm font-semibold text-primary bg-primary/10 px-4 py-2 rounded-full">

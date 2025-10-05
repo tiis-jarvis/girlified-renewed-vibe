@@ -4,6 +4,7 @@ import { Newsletter } from "@/components/Newsletter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Factory, TrendingUp, Leaf, Globe, Award, Target } from "lucide-react";
+import blogProductionHero from "@/assets/blog-production-hero.jpg";
 
 const BlogProduction = () => {
   const achievements = [
@@ -58,7 +59,14 @@ const BlogProduction = () => {
       
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-primary/5">
-        <div className="container mx-auto px-4">
+        <div className="absolute inset-0 overflow-hidden">
+          <img 
+            src={blogProductionHero} 
+            alt="Modern sanitary napkin manufacturing facility" 
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <div className="inline-block mb-4">
               <Badge variant="secondary" className="text-sm font-semibold px-4 py-2">
