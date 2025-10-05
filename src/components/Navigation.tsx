@@ -40,18 +40,15 @@ export const Navigation = () => {
                 Blog
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-card border-border shadow-lg">
+              <DropdownMenuContent className="bg-card border-border shadow-lg z-50">
                 <DropdownMenuItem asChild>
-                  <Link to="/blog" className="cursor-pointer">All Posts</Link>
+                  <Link to="/blog/engagement" className="cursor-pointer">Girlified Women and Girls Engagement and Focus Group Discussion</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/blog/health" className="cursor-pointer">Health & Wellness</Link>
+                  <Link to="/blog/girl-child" className="cursor-pointer">Empowering Girls on International Day of the Girl Child: Our Remarkable Initiative</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/blog/sustainability" className="cursor-pointer">Sustainability</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/blog/stories" className="cursor-pointer">Success Stories</Link>
+                  <Link to="/blog/production" className="cursor-pointer">10 Million Sanitary Napkins every year now achievable</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -100,32 +97,25 @@ export const Navigation = () => {
             <div className="space-y-2">
               <p className="text-foreground font-medium px-2">Blog</p>
               <Link
-                to="/blog"
+                to="/blog/engagement"
                 className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 pl-4"
                 onClick={() => setIsOpen(false)}
               >
-                All Posts
+                Women and Girls Engagement
               </Link>
               <Link
-                to="/blog/health"
+                to="/blog/girl-child"
                 className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 pl-4"
                 onClick={() => setIsOpen(false)}
               >
-                Health & Wellness
+                International Day of the Girl Child
               </Link>
               <Link
-                to="/blog/sustainability"
+                to="/blog/production"
                 className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 pl-4"
                 onClick={() => setIsOpen(false)}
               >
-                Sustainability
-              </Link>
-              <Link
-                to="/blog/stories"
-                className="block text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 pl-4"
-                onClick={() => setIsOpen(false)}
-              >
-                Success Stories
+                10 Million Sanitary Napkins
               </Link>
             </div>
             <Link
