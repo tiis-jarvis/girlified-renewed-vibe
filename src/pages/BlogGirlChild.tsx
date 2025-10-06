@@ -34,55 +34,65 @@ const BlogGirlChild = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-primary/5">
-        <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src={blogGirlChildHero} 
-            alt="Girls celebrating International Day of the Girl Child" 
-            className="w-full h-full object-cover opacity-20"
-          />
+      {/* Hero Section with Animated Background */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="https://cdn.pixabay.com/video/2022/12/08/142523-779556056_large.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-secondary/85"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <div className="inline-block mb-4">
-              <Badge variant="secondary" className="text-sm font-semibold px-4 py-2">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block mb-6 animate-fade-in">
+              <Badge variant="secondary" className="text-sm font-semibold px-6 py-3 bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30">
                 October 12, 2023
               </Badge>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 animate-fade-in leading-tight" style={{ animationDelay: '0.1s' }}>
               Empowering Girls on
-              <span className="block text-primary mt-2">International Day of the Girl Child</span>
+              <span className="block mt-2">International Day of the Girl Child</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Our remarkable initiative that left 523 girls better informed, more confident, 
               and better equipped to embrace womanhood while nurturing a sustainable future.
             </p>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
       {/* Impact Stats */}
-      <section className="py-16 bg-card/50">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-gradient-to-br from-background to-muted/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.08),transparent_60%)]"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className="border-2 shadow-lg text-center">
-                <CardContent className="p-8">
-                  <div className="text-5xl font-bold text-primary mb-2">523</div>
-                  <div className="text-lg text-muted-foreground">Girls Empowered</div>
+              <Card className="group border-2 border-primary/20 bg-card/60 backdrop-blur-sm hover:shadow-glow hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 text-center animate-scale-in overflow-hidden">
+                <CardContent className="p-10 relative">
+                  <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                  <div className="text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform relative z-10">523</div>
+                  <div className="text-lg font-semibold text-muted-foreground uppercase tracking-wide relative z-10">Girls Empowered</div>
                 </CardContent>
               </Card>
-              <Card className="border-2 shadow-lg text-center">
-                <CardContent className="p-8">
-                  <div className="text-5xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-lg text-muted-foreground">Received Eco Pads</div>
+              <Card className="group border-2 border-primary/20 bg-card/60 backdrop-blur-sm hover:shadow-glow hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 text-center animate-scale-in overflow-hidden" style={{ animationDelay: '0.1s' }}>
+                <CardContent className="p-10 relative">
+                  <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                  <div className="text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform relative z-10">100%</div>
+                  <div className="text-lg font-semibold text-muted-foreground uppercase tracking-wide relative z-10">Received Eco Pads</div>
                 </CardContent>
               </Card>
-              <Card className="border-2 shadow-lg text-center">
-                <CardContent className="p-8">
-                  <div className="text-5xl font-bold text-primary mb-2">1</div>
-                  <div className="text-lg text-muted-foreground">Day of Impact</div>
+              <Card className="group border-2 border-primary/20 bg-card/60 backdrop-blur-sm hover:shadow-glow hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 text-center animate-scale-in overflow-hidden" style={{ animationDelay: '0.2s' }}>
+                <CardContent className="p-10 relative">
+                  <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                  <div className="text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform relative z-10">1</div>
+                  <div className="text-lg font-semibold text-muted-foreground uppercase tracking-wide relative z-10">Day of Impact</div>
                 </CardContent>
               </Card>
             </div>
@@ -105,22 +115,30 @@ const BlogGirlChild = () => {
       </section>
 
       {/* Highlights Grid */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-muted/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,hsl(var(--primary)/0.08),transparent_60%)]"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in">
               Event <span className="text-primary">Highlights</span>
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               {highlights.map((highlight, index) => (
-                <Card key={index} className="border-2 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
-                  <CardContent className="p-8">
-                    <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mb-6">
-                      <highlight.icon className="w-8 h-8 text-white" />
+                <Card 
+                  key={index} 
+                  className="group border-2 border-primary/20 bg-card/80 backdrop-blur-sm hover:shadow-glow hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 animate-scale-in overflow-hidden" 
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardContent className="p-10 relative">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
+                    <div className="relative z-10">
+                      <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:shadow-glow group-hover:scale-110 transition-all duration-300">
+                        <highlight.icon className="w-10 h-10 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{highlight.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{highlight.description}</p>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4">{highlight.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{highlight.description}</p>
                   </CardContent>
                 </Card>
               ))}

@@ -57,32 +57,38 @@ const BlogProduction = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-primary/5">
-        <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src={blogProductionHero} 
-            alt="Modern sanitary napkin manufacturing facility" 
-            className="w-full h-full object-cover opacity-20"
-          />
+      {/* Hero Section with Video */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="https://cdn.pixabay.com/video/2019/08/30/26425-357851651_large.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-secondary/75 to-primary/90"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <div className="inline-block mb-4">
-              <Badge variant="secondary" className="text-sm font-semibold px-4 py-2">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block mb-6 animate-fade-in">
+              <Badge variant="secondary" className="text-sm font-semibold px-6 py-3 bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30">
                 Major Milestone
               </Badge>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 animate-fade-in leading-tight" style={{ animationDelay: '0.1s' }}>
               10 Million Sanitary Napkins
-              <span className="block text-primary mt-2">Every Year Now Achievable</span>
+              <span className="block mt-2">Every Year Now Achievable</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Through innovation, dedication, and strategic partnerships, we've achieved a 50x increase 
               in production capacity—a game-changing milestone in our fight against period poverty.
             </p>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
       {/* Mission Statement */}
@@ -110,23 +116,29 @@ const BlogProduction = () => {
       </section>
 
       {/* Achievement Stats */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.05),transparent_70%)]"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in">
               Key <span className="text-primary">Achievements</span>
             </h2>
             
             <div className="grid md:grid-cols-4 gap-6">
               {achievements.map((achievement, index) => (
-                <Card key={index} className="border-2 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in text-center">
-                  <CardContent className="p-6">
-                    <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4">
-                      <achievement.icon className="w-8 h-8 text-white" />
+                <Card 
+                  key={index} 
+                  className="group border-2 border-primary/20 bg-card/60 backdrop-blur-sm hover:shadow-glow hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 animate-scale-in text-center overflow-hidden" 
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardContent className="p-8 relative">
+                    <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6 group-hover:shadow-glow group-hover:scale-110 transition-all duration-300 relative z-10">
+                      <achievement.icon className="w-10 h-10 text-white" />
                     </div>
-                    <div className="text-4xl font-bold text-primary mb-2">{achievement.stat}</div>
-                    <div className="text-sm font-semibold mb-2">{achievement.label}</div>
-                    <div className="text-xs text-muted-foreground">{achievement.description}</div>
+                    <div className="text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3 group-hover:scale-105 transition-transform relative z-10">{achievement.stat}</div>
+                    <div className="text-sm font-bold mb-2 uppercase tracking-wide relative z-10">{achievement.label}</div>
+                    <div className="text-xs text-muted-foreground relative z-10">{achievement.description}</div>
                   </CardContent>
                 </Card>
               ))}
