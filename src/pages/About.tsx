@@ -14,26 +14,40 @@ export default function About() {
       
       <main>
         {/* Hero Section */}
-        <section className="relative bg-gradient-subtle overflow-hidden">
-          <div className="container mx-auto px-4 py-20">
+        <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="https://cdn.pixabay.com/video/2019/09/07/26434-359349056_large.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6 animate-fade-in">
-                <Badge className="bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300">
-                  About Girlified
-                </Badge>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  About Girlified Sanitary Pad
+              <div className="space-y-8 animate-fade-in">
+                <div className="inline-block">
+                  <Badge className="bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 px-6 py-3 text-sm font-semibold">
+                    About Girlified
+                  </Badge>
+                </div>
+                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                  About <span className="bg-gradient-primary bg-clip-text text-transparent">Girlified</span> Sanitary Pad
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                   A revolutionary solution addressing period poverty and environmental sustainability through innovative, plant-based menstrual hygiene products.
                 </p>
               </div>
-              <div className="relative animate-fade-in" style={{ animationDelay: "200ms" }}>
-                <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-3xl rounded-full" />
+              <div className="relative animate-fade-in hidden md:block" style={{ animationDelay: "200ms" }}>
+                <div className="absolute -inset-4 bg-gradient-primary opacity-30 blur-3xl rounded-full animate-pulse" />
                 <img
                   src={aboutHero}
                   alt="Girlified Sanitary Pads"
-                  className="relative rounded-2xl shadow-elegant w-full h-auto object-cover transition-all duration-500 hover:scale-105 hover:shadow-glow"
+                  className="relative rounded-3xl shadow-glow w-full h-auto object-cover transition-all duration-500 hover:scale-105 border-4 border-primary/20"
                 />
               </div>
             </div>

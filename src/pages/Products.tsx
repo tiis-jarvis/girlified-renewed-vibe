@@ -107,40 +107,47 @@ const Products = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={smartPadHero} 
-            alt="Girlified Smart Pad" 
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
             className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+          >
+            <source src="https://cdn.pixabay.com/video/2022/11/29/141193-777599486_large.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl animate-fade-in">
-            <Badge className="mb-4 bg-gradient-primary text-white border-0">Revolutionary Technology</Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-pink-500 to-purple-500 bg-clip-text text-transparent">
-              Introducing Girlified Smart Pads
+          <div className="max-w-4xl animate-fade-in">
+            <div className="inline-block mb-6">
+              <Badge className="bg-gradient-primary text-white border-0 px-6 py-3 text-sm font-semibold">Revolutionary Technology</Badge>
+            </div>
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+              Introducing <span className="bg-gradient-to-r from-primary via-pink-500 to-purple-500 bg-clip-text text-transparent">Girlified Smart Pads</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-4 leading-relaxed">
+            <p className="text-2xl md:text-3xl text-foreground mb-6 leading-relaxed font-semibold">
               Your period is more than a cycle — it's a window into your health
             </p>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl">
               Over 50% of female fertility issues and gynecological cancers can be prevented if caught early. 
               The Girlified Smart Pad transforms menstrual fluid into actionable insights through a non-invasive, 
               comfortable, and discreet method.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gradient-primary hover:shadow-glow text-lg px-8">
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Button size="lg" className="bg-gradient-primary hover:shadow-glow text-xl px-12 py-7 hover:scale-105 transition-all duration-300">
                 Pre-Order Now
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 border-2">
+              <Button size="lg" variant="outline" className="text-xl px-12 py-7 border-2 border-primary hover:bg-primary hover:text-white hover:scale-105 transition-all duration-300">
                 Learn More
               </Button>
             </div>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
       {/* Medical Report Form Section */}

@@ -37,23 +37,35 @@ export default function Contact() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-primary py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(0_0%_100%_/_0.1),_transparent_50%)]" />
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="https://cdn.pixabay.com/video/2022/05/04/116488-707336716_large.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-background/80"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in">
-            <p className="text-primary-foreground/90 text-sm uppercase tracking-wider mb-4 font-semibold">
-              Get In Touch
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-semibold text-white bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30 uppercase tracking-wide">
+                Get In Touch
+              </span>
+            </div>
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 leading-tight">
               Contact Us
             </h1>
-            <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
+            <p className="text-2xl md:text-3xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               Have questions or want to learn more? We'd love to hear from you.
             </p>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
       {/* Contact Information Cards */}

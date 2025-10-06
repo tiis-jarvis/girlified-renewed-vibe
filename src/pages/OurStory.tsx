@@ -16,17 +16,35 @@ const OurStory = () => {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-br from-primary/5 via-secondary/10 to-accent/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground">
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="https://cdn.pixabay.com/video/2023/07/14/171416-844826682_large.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/60 to-background/90"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
+              <div className="inline-block mb-6">
+                <span className="text-sm font-semibold text-white bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
+                  Journey
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
                 Our Story
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-2xl md:text-3xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                 Creating sustainable solutions for menstrual health while protecting our planet
               </p>
             </div>
           </div>
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
         </section>
 
         {/* Main Story Section */}

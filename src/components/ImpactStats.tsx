@@ -1,4 +1,5 @@
 import { Factory, Recycle, Globe, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const ImpactStats = () => {
   const stats = [
@@ -29,30 +30,41 @@ export const ImpactStats = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 via-primary/5 to-background">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-6">
+    <section className="py-20 md:py-32 bg-gradient-to-br from-primary/10 via-primary/5 to-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,hsl(var(--primary)/0.15),transparent_50%)]"></div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+            Our <span className="bg-gradient-primary bg-clip-text text-transparent">Impact</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Making a difference one pad at a time
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {stats.map((stat, index) => (
-            <div
+            <Card
               key={index}
-              className="bg-gradient-to-br from-primary/20 to-primary/10 p-8 rounded-lg hover:shadow-glow transition-all hover:-translate-y-1 animate-fade-in"
+              className="group border-2 border-primary/20 bg-card/50 backdrop-blur-sm hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-start space-x-4">
-                <div className="w-16 h-16 rounded-full bg-primary/30 flex items-center justify-center flex-shrink-0">
-                  <stat.icon className="w-8 h-8 text-primary" />
+              <CardContent className="p-10">
+                <div className="flex items-start space-x-6">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                    <stat.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3">
+                      {stat.value}
+                    </h3>
+                    <p className="text-base text-foreground font-semibold mb-3">{stat.label}</p>
+                    {stat.description && (
+                      <p className="text-sm text-muted-foreground leading-relaxed">{stat.description}</p>
+                    )}
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                    {stat.value}
-                  </h3>
-                  <p className="text-sm text-foreground/80 font-medium mb-2">{stat.label}</p>
-                  {stat.description && (
-                    <p className="text-sm text-muted-foreground">{stat.description}</p>
-                  )}
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
