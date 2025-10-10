@@ -1,74 +1,63 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { CheckCircle2, Leaf, Heart, Shield } from "lucide-react";
+import { Lightbulb, Cpu, Database, FlaskConical } from "lucide-react";
 
 export const WhyChoose = () => {
   const features = [
     {
-      icon: Heart,
-      title: "Maximum Comfort",
-      description: "Soft, breathable materials that keep you comfortable all day long",
+      icon: Lightbulb,
+      title: "INNOVATION",
+      description: "Leveraging new technologies for sustainable menstrual hygiene solutions.",
     },
     {
-      icon: Leaf,
-      title: "Eco-Friendly",
-      description: "Made from sustainable banana fibers, reducing plastic waste",
+      icon: Cpu,
+      title: "TECHNOLOGY",
+      description: "For efficient and eco-friendly product development.",
     },
     {
-      icon: Shield,
-      title: "All-Day Protection",
-      description: "Excellent length and absorbency for worry-free protection",
+      icon: Database,
+      title: "DATA DRIVEN",
+      description: "An enterprise driven by valuable research and impact data.",
     },
     {
-      icon: CheckCircle2,
-      title: "Quality Assured",
-      description: "Rigorously tested to meet the highest standards",
+      icon: FlaskConical,
+      title: "RESEARCH",
+      description: "Driven by research-based approaches to women's health.",
     },
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Why Choose Girlified?
+    <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.05),transparent_50%)]"></div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <h3 className="text-lg font-semibold text-primary mb-4 tracking-wide">
+            Why Choose Us |
+          </h3>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Girlified is driven by <span className="bg-gradient-primary bg-clip-text text-transparent">innovation</span> and centered on <span className="bg-gradient-primary bg-clip-text text-transparent">impact!</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Are you tired of being discomforted by your favorite sanitary pad brand? We've got you
-            covered with an exciting and very comfortable sanitary pad that keeps you assured while
-            giving you the unique feeling of saving our planet from plastic waste.
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="border-primary/20 hover:shadow-glow transition-all duration-300 hover:-translate-y-2 animate-scale-in group"
+              className="group border-0 shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-2 animate-scale-in bg-card"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="p-6 text-center space-y-4">
-                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
-                  <feature.icon className="w-8 h-8 text-white transition-transform duration-300 group-hover:scale-110" />
+              <CardContent className="p-8 text-center">
+                <div className="mb-6 inline-flex p-4 rounded-2xl bg-primary/10">
+                  <feature.icon className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <h3 className="text-lg font-bold mb-4 text-foreground uppercase tracking-wide">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {feature.description}
+                </p>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="text-center">
-          <blockquote className="text-2xl font-semibold text-primary mb-6 italic">
-            "Maximum comfort, excellent length, protects all day long."
-          </blockquote>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-glow"
-          >
-            Read More About Us
-          </Button>
         </div>
       </div>
     </section>
